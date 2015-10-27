@@ -33,7 +33,7 @@ public class GameTeleportation {
 				if(time == 1){
 					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats seront actif dans: §e1 seconde§6.");
 				}
-				if(time <= 0){
+				if(time == 0){
 					Bukkit.getScheduler().cancelTask(task);
 					//Bukkit.getServer().getWorld("world").setPVP(false);
 					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats sont maintenant actifs !");
