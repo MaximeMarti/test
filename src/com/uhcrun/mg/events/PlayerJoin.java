@@ -93,7 +93,7 @@ public class PlayerJoin implements Listener {
 							Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6La partie commence dans " + ChatColor.YELLOW + timer + " seconde§6.");
 						}
 						
-						if(timer <= 0){
+						if(timer == 0){
 							Bukkit.getScheduler().cancelTask(taskLobby);
 							Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§eLa partie vient de commencer !");
 							GameState.setState(GameState.TELEPORTATIONA);

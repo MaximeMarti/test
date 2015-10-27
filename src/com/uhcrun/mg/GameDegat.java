@@ -33,7 +33,7 @@ public class GameDegat {
 				if(time == 1){
 					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats seront actif dans: §e1 seconde§6.");
 				}
-				if(time <= 0){
+				if(time == 0){
 					Bukkit.getScheduler().cancelTask(taskDegat);
 					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats sont maintenant actifs !");
 					GameState.setState(GameState.DEGATACTIF);
