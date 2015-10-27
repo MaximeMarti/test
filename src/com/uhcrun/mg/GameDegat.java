@@ -20,7 +20,7 @@ public class GameDegat {
 			public void run() {
 				time--;
 				
-				if(time <= 30 && time !=0){
+				if(time <= 30 && time >=0){
 					ScoreBoardTeleportation.scoreBoardLoad();
 					for (Player pls:Bukkit.getOnlinePlayers()){
 					TitleManager.sendActionBar(pls, "§7Dégats actifs dans: §e" + time + " secondes§7.");
