@@ -1,0 +1,7 @@
+main: com.uhcrun.mg.UHCRun
+name: UHCRun
+version: 1.0
+author: Maxime
+commands:
+    fs:
+        description: ForceStart
