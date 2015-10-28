@@ -11,45 +11,45 @@ import com.uhcrun.mg.utils.TitleManager;
 public class GameTeleportation {
 
 	
-	static int task;
+	static int taskTeleportationt;
 	public static int time = 1141;
-	public static void Teleportation(){
-		task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Bukkit.getPluginManager().getPlugin("UHCRun"), new Runnable(){			
+	public static void Degat(){
+		taskTeleportationt = Bukkit.getScheduler().scheduleSyncRepeatingTask(Bukkit.getPluginManager().getPlugin("UHCRun"), new Runnable(){
 			
 			@Override
 			public void run() {
 				time--;
 				
-				if(time <= 1141 && time !=0){
+				if(time <= 1141 && time >=0){
 					ScoreBoardTeleportation.scoreBoardLoad();
 					for (Player pls:Bukkit.getOnlinePlayers()){
-					TitleManager.sendActionBar(pls, "§7Les dégats seront actifs dans: §e" + time + " secondes§7.");
+					TitleManager.sendActionBar(pls, "§7Téléportation dans: §e" + time + " secondes§7.");
 					}
-					
 				}
+
 				if(time == 10 || time == 5 || time == 4 || time == 3 || time == 2){
-					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats seront actif dans:§e "+time+" secondes§6.");
+					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Téléportation dans:§e "+time+" secondes§6.");
 				}
 				if(time == 1){
-					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats seront actif dans: §e1 seconde§6.");
+					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Téléportation dans: §e1 seconde§6.");
 				}
 				if(time == 0){
-					Bukkit.getScheduler().cancelTask(task);
-					//Bukkit.getServer().getWorld("world").setPVP(false);
-					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Les dégats sont maintenant actifs !");
+					Bukkit.getScheduler().cancelTask(taskTeleportationt);
+					Bukkit.broadcastMessage(ChatUtils.getGamePrefix() + "§6Téléportation !");
 					GameState.setState(GameState.TELEPORTATIONB);
-					Teleportation();
-
+					Degat();
 					
-
 				}
+				
+				//GameTeleportation.Teleportation();
+				
 			}
 	
 		}, 20, 20);
 	
 	}
 	
-	public static void DegatPvP(){
+	public static void Teleportation(){
 		
 	}
 

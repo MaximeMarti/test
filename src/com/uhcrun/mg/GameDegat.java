@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import com.uhcrun.mg.GameState;
-import com.uhcrun.mg.scoreboards.ScoreBoardTeleportation;
+import com.uhcrun.mg.scoreboards.ScoreBoardDegat;
 import com.uhcrun.mg.utils.ChatUtils;
 import com.uhcrun.mg.utils.TitleManager;
 
@@ -21,7 +21,7 @@ public class GameDegat {
 				time--;
 				
 				if(time <= 30 && time >=0){
-					ScoreBoardTeleportation.scoreBoardLoad();
+					ScoreBoardDegat.scoreBoardLoad();
 					for (Player pls:Bukkit.getOnlinePlayers()){
 					TitleManager.sendActionBar(pls, "§7Dégats actifs dans: §e" + time + " secondes§7.");
 					}
@@ -39,8 +39,10 @@ public class GameDegat {
 					GameState.setState(GameState.DEGATACTIF);
 					Degat();
 					
-
 				}
+				
+				GameTeleportation.Teleportation();
+				
 			}
 	
 		}, 20, 20);
